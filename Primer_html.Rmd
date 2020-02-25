@@ -1,0 +1,114 @@
+---
+title: "Primer_html"
+author: "ricardogasku"
+date: "25 de febrero de 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Opciones en los fragmentos de codigo
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
++ *eval*:TRUE. Si queremos evaluar el codigo e incluir los resultados
+
+You can also embed plots, for example:
+
+```{r, eval=FALSE}
+plot(pressure)
+```
++*echo*: TRUE. Indica si muestra el codigo a la par que los resultados.
+incluyo el ejemplo eval = FALSE & echo = TRUE  
+  
+
+```{r, eval=FALSE, echo=TRUE}
+plot(pressure)
+```  
+
+eval true y echo false te muestra el resultado sin codigo  
+
+
+```{r, eval=TRUE, echo=FALSE}
+plot(pressure)
+```  
+  
++*collapse*: FALSE. Debe combinar la salida del texto y el codigo fuente
+
+```{r, eval=TRUE, echo=TRUE, collapse=TRUE}
+summary(pressure)
+```
++*warning*, *message* y *error* : TRUE. Si se muestran advertencias, mensajes y errores en el documento de salida.  
+
++*include*:Si se debe incluir algo de un fragmento del codigo en el documento de salida.
+
+```{r, eval=TRUE, echo=FALSE, include=FALSE}
+pressure <- subset(pressure, temperature < 100)
+```
++*fig.width* y *fig.height*: Especificamos el tamaño en pulgadas. Tambien podemos especificarlo con *fig.dim* = c(6,4), que seria el 6 ancho y el 4 alto.  
++*out.width* u *out.height*: tamaño escalado de salida  
++*fig.align*: centrado de la figura  
++*fig.cap*:pone un pie a la figura  
+
+```{r, eval=TRUE, echo=TRUE, fig.cap="Figura1. Relacion entre la presion y la temperatura"}
+plot(pressure)
+plot(pressure, cex=3, pch = 8, col = "red")
+plot(pressure, cex=0.5, pch = 15, col = "red")
+```
+##Tablas con R Markdown
+vamos a hacer una tabla
+
+Esta es la peor tabla|columna2
+---------------------|--------
+donde podemos incluir|celdas y columnas
+
+```{r, eval=TRUE, echo=FALSE, message=FALSE, include=TRUE}
+library(flextable)  #para tablas, instalarlo antes
+library(officer) #para tablas, instalarlo antes
+library(tidyverse)#para manejo de datos, instalarlo antes
+
+str(iris)
+names(iris)
+View(iris)
+iris_tidy <- iris %>%
+  mutate_if(is.numeric, round, digits = 1)
+View(iris_tidy)
+str(iris_tidy)
+
+##creamos la tabla####
+doc <- read_docx()
+iris_sel2 <- iris_tidy %>%
+  rename("Sepal lenght" = Sepal.Length, 
+         "Petal width" = Petal.Length)
+names(iris_sel2)
+#la tabla
+ftable <- flextable(iris_sel2)
+ftable <- align(ftable, align = "center", part = "header")
+ftable <- align(ftable, align = "center", part = "body")
+ftable <- colformat_num(ftable, col_keys = c("Sepal lenght",
+                                             "Petal width"), digits = 0)
+
+doc2 <- body_add_flextable(doc, value = ftable)
+print(doc2, target = "mipritabla.docx")
+
+#doc <- read_docx("directorio") ##para guardarlo donde quieras
+
+```
+
+
+para poner el resukltado de la media por ejemplo en la misma linea sin que aparezca el codigo se pone entre comillas simples el codigo: ej: `r mean(cars$speed)`
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
