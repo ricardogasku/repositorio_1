@@ -3,6 +3,8 @@ title: "practica2_parte4"
 author: "ricardogasku"
 output: html_document
 --- 
+## 2.4. RMarkdown. Genera un documento de html que contenga  
+#### 1.	Todas las opciones de sintaxis básicas de Pandoc Markdown: texto plano, cursiva, negrita, superíndice, subíndice, tachado, link, ecuación en línea de texto, ecuación en bloque, diferentes encabezados.  
 
 Texto normal  
 *Texto en cursiva*  
@@ -21,7 +23,54 @@ Ecuación en línea: $A = \pi*r^{2}$
 ###### Encabezado 6   
 $Encabezado 7$  
 $$Encabezado 8$$  
-Hola  
-mundo  
-Hola 
-mundo
+  
+  
+
+#### 2.	Escribe fragmentos de código con las siguientes características   
+##### a.a.	Peguen las palabas “Hola” y “mundo” en una línea nueva
+```{r}
+"Hola"
+"mundo"
+```
+##### b.b.	Peguen las palabas “Hola” y “mundo” en la misma línea de código
+```{r}
+"Hola mundo"
+```  
+##### c.c.	Peguen las palabas “Hola” y “mundo” en una línea nueva de código y que no muestren el resultado de R
+```{r eval=FALSE}
+"Hola"
+"mundo"
+```  
+##### d.d.	Peguen las palabas “Hola” y “mundo” en una línea nueva de código y que no muestren el resultado de R y que no se muestre en el documento de Word.
+```{r eval=FALSE, echo=FALSE}
+"Hola"
+"mundo"
+```
+  
+#### 3.	Muestra una tabla y una gráfica en el archivo de salida, tomando alguno de los datos que vienen en R o alguno de sus paquetes. ¡¡Se creativo!! Usando (al menos): encabezados, explicaciones, ecuaciones, líneas de código en el texto y bloques de código.  
+
+library(flextable)  #para tablas, instalarlo antes  
+library(officer) #para tablas, instalarlo antes  
+library(tidyverse)#para manejo de datos, instalarlo antes  
+str(iris)  
+names(iris)  
+View(iris)  
+iris_tidy <- iris %>%  
+  mutate_if(is.numeric, round, digits = 1)  
+View(iris_tidy)  
+str(iris_tidy)  
+##creamos la tabla####  
+doc <- read_docx()  
+iris_sel2 <- iris_tidy %>%  
+  rename("Sepal lenght" = Sepal.Length,
+         "Petal width" = Petal.Length)  
+names(iris_sel2)  
+#la tabla  
+ftable <- flextable(iris_sel2)  
+ftable <- align(ftable, align = "center", part = "header")  
+ftable <- align(ftable, align = "center", part = "body")  
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+  
