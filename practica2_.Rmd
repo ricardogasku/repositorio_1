@@ -1,0 +1,27 @@
+---
+title: "practica2_parte4"
+author: "ricardogasku"
+output: html_document
+--- 
+
+Texto normal  
+*Texto en cursiva*  
+**Texto en negrita**  
+Texto con ^Superindice^  
+Texto con <sub>Subindice</sub>  
+~~Texto tachado~~  
+[Texto con link](https://github.com/)  
+Ecuación en línea: $A = \pi*r^{2}$  
+
+# Encabezado 1   
+## Encabezado 2  
+### Encabezado 3  
+#### Encabezado 4   
+##### Encabezado 5  
+###### Encabezado 6   
+$Encabezado 7$  
+$$Encabezado 8$$  
+Hola  
+mundo  
+Hola 
+mundo
