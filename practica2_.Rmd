@@ -1,6 +1,6 @@
 ---
-title: "practica2_parte4"
-author: "ricardogasku"
+title: "Practica 2"
+author: "Javier Aguado y Ricardo Gascuñana"
 output: word_document
 --- 
 ## *Alumnos: Javier Aguado y Ricardo Gascuñana*  
@@ -112,3 +112,36 @@ c("Hola", "mundo")
   
 #### 3.	Muestra una tabla y una gráfica en el archivo de salida, tomando alguno de los datos que vienen en R o alguno de sus paquetes. ¡¡Se creativo!! Usando (al menos): encabezados, explicaciones, ecuaciones, líneas de código en el texto y bloques de código.  
 
+#### Gráfico  
+
+El código para la creación del siguiente gráfico, ha sido el siguiente:  
+
+    plot(pressure)  
+   
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+#### Tabla  
+El código para la creación de la tabla ha sido el siguiente:    
+
+~~~
+library(flextable, officer)
+ftable <- flextable(iris[iris$Sepal.Length<5, 1:4]/2)
+ftable <- align(ftable, align = "center", part = "header")
+ft <- bg(ftable, bg="grey" , part="all")
+ft
+~~~
+
+
+En la siguiente tabla observamos las distintas dimensiones de los pétalos, las cuales han sido divididas entre 2 a través de la siguiente fórmula:    $\frac{\alpha}{2}$     
+Siendo ${alpha}$ la dimensión original del pétalo.
+
+
+```{r, echo=FALSE}
+library(flextable, officer)
+ftable <- flextable(iris[iris$Sepal.Length<5, 1:4]/2)
+ftable <- align(ftable, align = "center", part = "header")
+ft <- bg(ftable, bg="grey" , part="all")
+ft
+```
