@@ -1,8 +1,66 @@
 ---
 title: "practica2_parte4"
 author: "ricardogasku"
-output: html_document
+output: word_document
 --- 
+## *Alumnos: Javier Aguado y Ricardo Gascuñana*  
+## *Fecha entrega: 03/03/2020*  
+
+# *Práctica 2 – GitHub y Ciencia Reproducible*  
+
+## 2.1. Responde a las siguientes preguntas:  
+#### (1)	¿Qué es la Ciencia Reproducible? ¿En qué casos se consigue un 100% de la reproducibilidad?  
+
+En las ciencias, debido a la necesidad de corroborar los logros obtenidos ante el público, es necesario establecer un __procedimiento metodológico riguroso__ que explique __como se ha llegado a esos resultados__, naciendo aquí la “Ciencia Reproducible”.  
+Esta es una “ciencia” que incluye todo código __reproducible mediante un ordenado__* y que permita __regenerar el resultado final__ de forma clara __con los mismos datos de partida__, sin tener nada que ver con la repetibilidad, la cual busca llegar a resultados distintos con datos de entrada distintos pero un mismo procedimiento.  
+Los casos que llegan al 100% de la reproducibilidad son muy escasos, ya que __los códigos no suelen perdurar__, encontrándose únicamente el 17% de los datos disponibles tras un período de un año según diversos estudios. Esto suele ser debido a la eliminación del código por parte del usuario y a cambios constantes en los módulos necesarios para la ejecución del “Script”.  
+Para llegar a ese __100%__ la mejor opción se encuentra en los __repositorios on-line__, donde se puede subir código en formatos abiertos y de forma gratuita, de manera que estos cambios se pueden ir actualizando por la comunidad.  
+
+#### (2)	¿Cuáles de los beneficios que se sugieren son para ti los más importantes? Justifica tu respuesta  
+- __La utilización de código permite la automatización: ejecución de tareas repetitivas sin esfuerzo:__
+El hecho de guardar los códigos y de poder encontrarlos de forma abierta ahorra una gran cantidad de tiempo, sobre todo en aquellos trabajos donde es necesaria la creación de decenas y cientos de archivos con el mismo procedimiento. Esta automatización elimina errores que puede
+cometer el usuario al repetir el mismo proceso varias veces, o posibles errores matemáticos por pequeñas confusiones que el ordenador no comete.  
+- __La publicación del código facilita la comprensión del artículo y evita malinterpretaciones:__
+El hecho de publicar el código vuelve al estudio mucho más objetivo, ya que puede parecer muy complicado según las expresiones verbales utilizadas y recibir varias críticas sino está perfectamente expresado; la Ciencia Reproducible permite que todos “hablemos el mismo idioma” eliminando estas dificultades.  
+- __Ahorro de tiempo y esfuerzo al reutilizar código en otros proyectos:__
+La programación no está familiarizada con todo el mundo. La Ciencia Reproducible también sirve como biblioteca para aquellas personas que desean publicar un artículo o realizar un trabajo y tienen la necesidad de implementar algún “script” sin ser programadores. Esta “ciencia” ahorra la gran cantidad de tiempo y esfuerzo que se debería de emplear para llegar a realizar ese “script”, siendo necesarios únicamente conocimientos básicos para su interpretación.  
+
+#### (3)	¿Por qué no hace todo el mundo Ciencia Reproducible?  
+
+A pesar de ser sencillo en primera instancia, el hecho de aprender esta ciencia __conlleva tiempo__ si se quiere hacer de manera correcta, como bien puede ser aprender a usar Git o Rmarkdown. Esto __no es un requisito para la calidad del trabajo__ y por lo tanto no se suele tener en cuenta a la hora de publicar un artículo.
+
+## 2.2. Lee el artículo “¿Por qué usar GitHub? Diez pasos para disfrutar de GitHub y no morir en el intento” (Galiano 2018) Realiza las siguientes tareas:  
+#### 1.	Crea una cuenta en GitHub  
+#### 2.	Instala Git: https://happygitwithr.com/install-git.html  
+#### 3.	Preséntate: https://happygitwithr.com/hello-git.html  
+```{r}
+library(usethis)
+use_git_config(user.name = "Ricardogasku", user.email = "ricardogasku@gmail.com")
+```
+#### 4.	Crea un repositorio en GitHub, haz un clon del repositorio y confirma que puedes push/pull desde la línea de comandos: https://happygitwithr.com/push-pull-github.html#push-pull-github  
+
+#### 5.	Conecta Rstudio a Git y Github: con el repositorio de GitHub clonalo a tu ordenador usando Rstudio. https://happygitwithr.com/rstudio-git-github.html#rstudio-git-github.  
+
+#### 6.	Introducir en el archivo README.md “Esta es una línea que incluí desde mi Rstudio” y comete los cambios (commit), posteriormente “push” a GitHub y comprueba que los cambios se realizaron correctamente en la nube.  
+
+#### 7.	Crea un nuevo archivo para las clases del bloque 3 y sálvalo en GitHub. ¡Ahora puedes tener todos tus códigos en la nube y trabajar fácilmente en grupo!  
+
+## 2.3. Lee “¿Por qué usar GitHub? Diez pasos para disfrutar de GitHub y no morir en el intento”.  
+#### Comprueba que tienes “claro” los siguientes conceptos:  
+- __Repositorio__  
+Es un directorio donde se almacenan los archivos del proyecto. Este se encuentra tanto en mi ordenador de forma local, como en la nube de GitHub, donde se irá actualizando cada proyecto, pudiendo además moverse a otros ordenadores.  
+- __Rama__  
+En Git tenemos una línea de desarrollo principal, sobre la cual trabajamos. Gracias a las ramas “branches” podemos bifurcar esta línea de desarrollo para trabajar de forma paralela y no “ensuciar” esa línea principal, desarrollando el código y pudiendo volver a juntar ambas líneas al final.  
+- __Pull and push__   
+Pull: Comando para acceder a un repositorio remoto y descargar todos los objetos del mismo. Seclona una copia completa del repositorio on-line en mi ordenador.  
+Push: Comando que sube a la nube los cambios hechos en mi repositorio, debe de ir acompañado de un “commit”.  
+- __Fork__  
+Comando que sirve para realizar una copia de un repositorio ajeno, lo encontraremos por GitHUb cuando queramos hacer una copia de algún ‘script’ que nos interese.  
+
+Desde la cuenta de Javier, se realiza un “fork” para copiar un archivo de Ricardo.  
+
+
+
 ## 2.4. RMarkdown. Genera un documento de html que contenga  
 #### 1.	Todas las opciones de sintaxis básicas de Pandoc Markdown: texto plano, cursiva, negrita, superíndice, subíndice, tachado, link, ecuación en línea de texto, ecuación en bloque, diferentes encabezados.  
 
@@ -34,7 +92,7 @@ $$Encabezado 8$$
 ```
 ##### b.b.	Peguen las palabas “Hola” y “mundo” en la misma línea de código
 ```{r}
-"Hola mundo"
+c("Hola", "mundo")
 ```  
 ##### c.c.	Peguen las palabas “Hola” y “mundo” en una línea nueva de código y que no muestren el resultado de R
 ```{r eval=FALSE}
@@ -49,28 +107,3 @@ $$Encabezado 8$$
   
 #### 3.	Muestra una tabla y una gráfica en el archivo de salida, tomando alguno de los datos que vienen en R o alguno de sus paquetes. ¡¡Se creativo!! Usando (al menos): encabezados, explicaciones, ecuaciones, líneas de código en el texto y bloques de código.  
 
-library(flextable)  #para tablas, instalarlo antes  
-library(officer) #para tablas, instalarlo antes  
-library(tidyverse)#para manejo de datos, instalarlo antes  
-str(iris)  
-names(iris)  
-View(iris)  
-iris_tidy <- iris %>%  
-  mutate_if(is.numeric, round, digits = 1)  
-View(iris_tidy)  
-str(iris_tidy)  
-##creamos la tabla####  
-doc <- read_docx()  
-iris_sel2 <- iris_tidy %>%  
-  rename("Sepal lenght" = Sepal.Length,
-         "Petal width" = Petal.Length)  
-names(iris_sel2)  
-#la tabla  
-ftable <- flextable(iris_sel2)  
-ftable <- align(ftable, align = "center", part = "header")  
-ftable <- align(ftable, align = "center", part = "body")  
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-  
