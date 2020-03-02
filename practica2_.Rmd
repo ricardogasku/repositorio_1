@@ -41,7 +41,11 @@ use_git_config(user.name = "Ricardogasku", user.email = "ricardogasku@gmail.com"
 
 #### 5.	Conecta Rstudio a Git y Github: con el repositorio de GitHub clonalo a tu ordenador usando Rstudio. https://happygitwithr.com/rstudio-git-github.html#rstudio-git-github.  
 
+Queda confirmado, de hecho este trabajo se inició en un ordenador, se subio con la herramienta push al repositorio y ahora se esta modificando gracias a bajarlo mediante la herramienta pull para posteriormente volver a subir las modificaciones. 
+
 #### 6.	Introducir en el archivo README.md “Esta es una línea que incluí desde mi Rstudio” y comete los cambios (commit), posteriormente “push” a GitHub y comprueba que los cambios se realizaron correctamente en la nube.  
+
+![readme](C:/Users/ricar/Desktop/read_me.jpg)
 
 #### 7.	Crea un nuevo archivo para las clases del bloque 3 y sálvalo en GitHub. ¡Ahora puedes tener todos tus códigos en la nube y trabajar fácilmente en grupo!  
 
@@ -59,6 +63,7 @@ Comando que sirve para realizar una copia de un repositorio ajeno, lo encontrare
 
 Desde la cuenta de Javier, se realiza un “fork” para copiar un archivo de Ricardo.  
 
+![readme](C:/Users/ricar/Desktop/fork.jpg)
 
 
 ## 2.4. RMarkdown. Genera un documento de html que contenga  
