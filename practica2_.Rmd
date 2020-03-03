@@ -115,11 +115,17 @@ c("Hola", "mundo")
 #### Gráfico  
 
 El código para la creación del siguiente gráfico, ha sido el siguiente:  
-
     plot(pressure)  
-   
+
 ```{r pressure, echo=FALSE}
 plot(pressure)
+```
+
+Tambien se pueden generar gráficos un poco más elavorados añadiendo algunas funciones, por ejemplo nosotros hemos añadido algunas muy sencillas:  
+```{r datos_aleatorios}
+x <- 1:100 # Asignamos a las x los valores del 1 al 100
+y <- x + rnorm(x) # Generamos datos aleatorios con probabilidad normal
+plot(x,y) # Creamos el gráfico
 ```
 
 #### Tabla  
